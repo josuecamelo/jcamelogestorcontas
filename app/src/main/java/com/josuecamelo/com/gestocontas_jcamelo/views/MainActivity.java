@@ -161,11 +161,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 // Existe uma conta bancária cadastrada
                 if(BankController.get() != null){
-                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new BankInfoFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new BankInfoFragment()).commit();
                 }
                 // Se não existe
                 else{
-                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoBankFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoBankFragment()).commit();
                 }
                 break;
             case R.id.drawerMenuCredit:
