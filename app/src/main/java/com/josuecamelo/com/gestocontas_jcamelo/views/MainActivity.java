@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         fabEarning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                loadEarningsForm();
             }
         });
     }
@@ -86,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(stringID);
         getSupportActionBar().setDisplayHomeAsUpEnabled(isNotHome);
         getSupportActionBar().setDisplayShowHomeEnabled(isNotHome);
+    }
+
+    private void loadEarningsForm(){
+        changeActionBarTitle(R.string.actionbar_earnings_form, true);
+        // Carregando fragmento formulário de despesas
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.fragmentContainer, new EarningsFormFragment()).
+                commit();
+        showHideFabs();
     }
 
     private void loadExpenseForm(){
