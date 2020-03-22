@@ -3,49 +3,50 @@ package com.josuecamelo.com.gestocontas_jcamelo.controllers;
 import com.josuecamelo.com.gestocontas_jcamelo.models.CreditCard;
 
 import io.realm.Realm;
+
 import com.josuecamelo.com.gestocontas_jcamelo.models.CreditCard;
 
 public class CreditCardController {
-    public static void create(String flag, String owner,double limit){
-        CreditCard cc = new CreditCard(flag,owner,limit,limit);
+    public static void create(String flag, String owner, double limit) {
+        CreditCard cc = new CreditCard(flag, owner, limit, limit);
         cc.save();
     }
 
-public static CreditCard get(){
-    CreditCard cc;
+    public static CreditCard get() {
+        CreditCard cc;
 
-    Realm realm = Realm.getDefaultInstance();
-    realm.beginTransaction();
+        Realm realm = Realm.getDefaultInstance();
+        realm.beginTransaction();
 
-    CreditCard ccTemp = realm.where(CreditCard.class).findFirst();
+        CreditCard ccTemp = realm.where(CreditCard.class).findFirst();
 
-    if(ccTemp != null){
+        if (ccTemp != null) {
 
-        cc = new CreditCard(ccTemp.getFlag(),ccTemp.getOwner(),ccTemp.getLimit(),ccTemp.getCurrentLimit());
+            cc = new CreditCard(ccTemp.getFlag(), ccTemp.getOwner(), ccTemp.getLimit(), ccTemp.getCurrentLimit());
 
-    }else{
-        cc = null;
+        } else {
+            cc = null;
+        }
+
+
+        realm.commitTransaction();
+        realm.close();
+
+        return cc;
     }
 
-
-    realm.commitTransaction();
-    realm.close();
-
-    return cc;
-}
-
-    public static void changeLimit(double value){
+    public static void changeLimit(double value) {
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
 
         CreditCard cc = realm.where(CreditCard.class).findFirst();
-        cc.setCurrentLimit(cc.getCurrentLimit()-value);
+        cc.setCurrentLimit(cc.getCurrentLimit() - value);
 
         realm.commitTransaction();
         realm.close();
     }
 
-    public static void resetLimit(){
+    public static void resetLimit() {
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
 

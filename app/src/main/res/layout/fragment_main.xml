@@ -187,20 +187,20 @@
             app:layout_constraintVertical_bias="0.123"
             tools:layout="@layout/fragment_current_balance" />
 
-        <!--        <fragment-->
-        <!--            android:id="@+id/fragment3"-->
-        <!--            android:name="schoolofnet.com.schoolofmoney.views.LimitCreditCardFragment"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginStart="8dp"-->
-        <!--            android:layout_marginTop="8dp"-->
-        <!--            android:layout_marginEnd="8dp"-->
-        <!--            android:layout_marginBottom="8dp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/fragment"-->
-        <!--            app:layout_constraintVertical_bias="0.087"-->
-        <!--            tools:layout="@layout/fragment_limit_credit_card" />-->
+        <fragment
+            android:id="@+id/fragment3"
+            android:name="com.josuecamelo.com.gestocontas_jcamelo.views.LimitCreditCardFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment"
+            app:layout_constraintVertical_bias="0.087"
+            tools:layout="@layout/fragment_limit_credit_card" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
