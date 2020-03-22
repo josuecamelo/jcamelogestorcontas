@@ -16,6 +16,7 @@ import android.view.animation.AlphaAnimation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.josuecamelo.com.gestocontas_jcamelo.R;
+import com.josuecamelo.com.gestocontas_jcamelo.SheetFragment;
 import com.josuecamelo.com.gestocontas_jcamelo.controllers.BankController;
 import com.josuecamelo.com.gestocontas_jcamelo.controllers.CreditCardController;
 
@@ -183,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InstallmentsListFragment()).commit();
                 break;
             case R.id.drawerMenuResumes:
-                //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new SheetFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new SheetFragment()).commit();
                 break;
         }
 
