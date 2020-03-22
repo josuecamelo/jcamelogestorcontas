@@ -5,6 +5,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Toolbar;
@@ -83,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void changeActionBarTitle(int stringID, boolean isNotHome){
         getSupportActionBar().setTitle(stringID);
-        /*getSupportActionBar().setDisplayHomeAsUpEnabled(isNotHome);
-        getSupportActionBar().setDisplayShowHomeEnabled(isNotHome);*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(isNotHome);
+        getSupportActionBar().setDisplayShowHomeEnabled(isNotHome);
     }
 
     private void loadExpenseForm(){
@@ -95,5 +96,23 @@ public class MainActivity extends AppCompatActivity {
                 replace(R.id.fragmentContainer, new ExpenseFormFragment()).
                 commit();
         showHideFabs();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Se o objeto nativo que foi clicado foi o botão de voltar(home)
+        if(item.getItemId() == android.R.id.home){
+            // Faça algo
+            backToHome();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void backToHome(){
+        changeActionBarTitle(R.string.app_name, false);
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.fragmentContainer, new MainFragment()).
+                commit();
     }
 }
