@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".views.MainActivity">
 
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light"
+        android:layout_gravity="start"
+        app:itemTextColor="@android:color/background_dark"
+        app:itemBackground="@android:color/background_light"
+        >
+
+    </com.google.android.material.navigation.NavigationView>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
