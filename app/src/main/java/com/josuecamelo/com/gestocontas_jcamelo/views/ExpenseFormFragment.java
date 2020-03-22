@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.josuecamelo.com.gestocontas_jcamelo.R;
+import com.josuecamelo.com.gestocontas_jcamelo.controllers.ExpenseController;
 
 import java.util.Calendar;
 
@@ -102,7 +103,8 @@ public class ExpenseFormFragment extends Fragment {
         String date = dateField.getText().toString();
         String category = categoriesList.getSelectedItem().toString();
         boolean checkConsolidated = consolidated.isChecked();
-        //ExpenseController.newExpense(value,description,date,category,checkConsolidated);
+
+        ExpenseController.newExpense(value, description, date,category, checkConsolidated);
     }
 
     private void setCategorySpinner(Context c){
