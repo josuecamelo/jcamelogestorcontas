@@ -177,10 +177,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 break;
             case R.id.drawerMenuInvoices:
-                //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new BillListFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new BillListFragment()).commit();
                 break;
             case R.id.drawerMenuInstallments:
-                //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InstallmentsListFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InstallmentsListFragment()).commit();
                 break;
             case R.id.drawerMenuResumes:
                 //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new SheetFragment()).commit();
