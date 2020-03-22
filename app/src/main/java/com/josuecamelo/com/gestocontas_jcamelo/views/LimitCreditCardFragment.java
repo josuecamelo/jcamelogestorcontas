@@ -27,7 +27,7 @@ public class LimitCreditCardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_limit_credit_card, container, false);
 
         TextView currentLimitTXT = view.findViewById(R.id.currentLimitTXT);

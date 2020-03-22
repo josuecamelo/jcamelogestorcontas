@@ -31,6 +31,7 @@ public class InfoCreditCardFragment extends Fragment implements View.OnClickList
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_info_credit_card, container, false);
 
         TextView flagInfoTXT = view.findViewById(R.id.flagInfoTXT);
