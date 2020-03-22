@@ -1,6 +1,8 @@
 package com.josuecamelo.com.gestocontas_jcamelo.views;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.DatePickerDialog;
@@ -8,12 +10,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.josuecamelo.com.gestocontas_jcamelo.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private FloatingActionButton fabMain, fabExpenses, fabEarning;
     private boolean fabsHide = true;
     private DatePickerDialog.OnDateSetListener dateListner;
@@ -24,6 +26,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        NavigationView navigationMenu = findViewById(R.id.navigationMenu);
+        navigationMenu.setNavigationItemSelectedListener(this);
+        navigationMenu.bringToFront();
+
+        mToolbar = findViewById(R.id.mainToolbar);
+        setSupportActionBar(mToolbar);
+
+        /*dl = findViewById(R.id.drawer);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,dl,mToolbar,R.string.open_drawer,R.string.close_drawer);
+
+        dl.addDrawerListener(toggle);
+        toggle.syncState();*/
 
         // Carregando fragmento principal
         getSupportFragmentManager().
@@ -124,5 +139,45 @@ public class MainActivity extends AppCompatActivity {
                 beginTransaction().
                 replace(R.id.fragmentContainer, new MainFragment()).
                 commit();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        /*switch (item.getItemId()){
+            case R.id.drawerMenuMain:
+                backToHome();
+                break;
+            case R.id.drawerMenuBank:
+
+                // Existe uma conta bancária cadastrada
+                if(BankController.get() != null){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new BankInfoFragment()).commit();
+                }
+                // Se não existe
+                else{
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoBankFragment()).commit();
+                }
+                break;
+            case R.id.drawerMenuCredit:
+
+                if(CreditCardController.get() != null){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InfoCreditCardFragment()).commit();
+                }else{
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoCreditCardFragment()).commit();
+                }
+                break;
+            case R.id.drawerMenuInvoices:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new BillListFragment()).commit();
+                break;
+            case R.id.drawerMenuInstallments:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InstallmentsListFragment()).commit();
+                break;
+            case R.id.drawerMenuResumes:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new SheetFragment()).commit();
+                break;
+        }*/
+
+        //closeDrawer();
+        return false;
     }
 }
