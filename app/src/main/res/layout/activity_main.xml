@@ -15,6 +15,7 @@
         app:itemTextColor="@android:color/background_dark"
         app:itemBackground="@android:color/background_light"
         app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/header"
         >
 
     </com.google.android.material.navigation.NavigationView>
