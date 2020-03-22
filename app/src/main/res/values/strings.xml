@@ -74,4 +74,14 @@
     <string name="installment_value">Valor da parcela</string>
     <string name="installment_number">Número de parcelas</string>
     <string name="sheet_header">Relatórios</string>
+    <string name="currency">0,00 R$</string>
+
+    <string-array name="earning_category">
+        <item>Salário</item>
+        <item>Investimento</item>
+        <item>Emprestimo</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
