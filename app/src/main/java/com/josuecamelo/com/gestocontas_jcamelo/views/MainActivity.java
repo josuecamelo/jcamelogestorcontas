@@ -1,4 +1,4 @@
-package com.josuecamelo.com.gestocontas_jcamelo;
+package com.josuecamelo.com.gestocontas_jcamelo.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,6 +10,7 @@ import android.view.animation.AlphaAnimation;
 import android.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.josuecamelo.com.gestocontas_jcamelo.R;
 
 public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fabMain, fabExpenses, fabEarning;
