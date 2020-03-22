@@ -171,9 +171,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.drawerMenuCredit:
 
                 if(CreditCardController.get() != null){
-                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InfoCreditCardFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InfoCreditCardFragment()).commit();
                 }else{
-                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoCreditCardFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoCreditCardFragment()).commit();
                 }
                 break;
             case R.id.drawerMenuInvoices:
