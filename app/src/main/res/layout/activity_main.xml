@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/design_default_color_primary_variant"
+        android:backgroundTint="@color/colorSuccess"
         android:clickable="true"
         android:focusable="true"
         android:visibility="invisible"
@@ -49,11 +49,11 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabMain"
-        android:layout_width="71dp"
-        android:layout_height="63dp"
+        android:layout_width="56dp"
+        android:layout_height="57dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:backgroundTint="@color/colorAccent"
+        android:backgroundTint="@color/colorAzul"
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="@color/colorPrimary"
