@@ -5,7 +5,7 @@ import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +14,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
+import com.josuecamelo.com.gestocontas_jcamelo.R;
+import com.josuecamelo.com.gestocontas_jcamelo.controllers.BillController;
+
 import java.util.Calendar;
-
-import schoolofnet.com.schoolofmoney.R;
-import schoolofnet.com.schoolofmoney.controllers.BillController;
-
 
 /**
  * A simple {@link Fragment} subclass.

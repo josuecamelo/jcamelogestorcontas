@@ -1,14 +1,15 @@
 package com.josuecamelo.com.gestocontas_jcamelo;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.List;
+import androidx.recyclerview.widget.RecyclerView;
 
-import schoolofnet.com.schoolofmoney.controllers.BillController;
-import schoolofnet.com.schoolofmoney.models.Bill;
+import com.josuecamelo.com.gestocontas_jcamelo.controllers.BillController;
+import com.josuecamelo.com.gestocontas_jcamelo.models.Bill;
+
+import java.util.List;
 
 public class BillsAdapter extends RecyclerView.Adapter<BillHolder>{
 
