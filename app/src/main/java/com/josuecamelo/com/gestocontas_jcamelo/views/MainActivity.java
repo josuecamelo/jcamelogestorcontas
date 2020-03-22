@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.DatePickerDialog;
@@ -15,6 +16,8 @@ import android.view.animation.AlphaAnimation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.josuecamelo.com.gestocontas_jcamelo.R;
+import com.josuecamelo.com.gestocontas_jcamelo.controllers.BankController;
+import com.josuecamelo.com.gestocontas_jcamelo.controllers.CreditCardController;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private FloatingActionButton fabMain, fabExpenses, fabEarning;
@@ -72,6 +75,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
+    void closeDrawer(){
+        if(dl.isDrawerOpen(GravityCompat.START)){
+            dl.closeDrawer(GravityCompat.START);
+        }
+    }
+
     private void showHideFabs(){
         // Define a animação
         // 0 significa invisivel e 1 visivel
@@ -99,8 +108,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void changeActionBarTitle(int stringID, boolean isNotHome){
         getSupportActionBar().setTitle(stringID);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(isNotHome);
-        getSupportActionBar().setDisplayShowHomeEnabled(isNotHome);
+        /*getSupportActionBar().setDisplayHomeAsUpEnabled(isNotHome);
+        getSupportActionBar().setDisplayShowHomeEnabled(isNotHome);*/
     }
 
     private void loadEarningsForm(){
@@ -135,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void backToHome(){
         changeActionBarTitle(R.string.app_name, false);
+
         getSupportFragmentManager().
                 beginTransaction().
                 replace(R.id.fragmentContainer, new MainFragment()).
@@ -143,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        /*switch (item.getItemId()){
+        switch (item.getItemId()){
             case R.id.drawerMenuMain:
                 backToHome();
                 break;
@@ -151,33 +161,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 // Existe uma conta bancária cadastrada
                 if(BankController.get() != null){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new BankInfoFragment()).commit();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new BankInfoFragment()).commit();
                 }
                 // Se não existe
                 else{
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoBankFragment()).commit();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoBankFragment()).commit();
                 }
                 break;
             case R.id.drawerMenuCredit:
 
                 if(CreditCardController.get() != null){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InfoCreditCardFragment()).commit();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InfoCreditCardFragment()).commit();
                 }else{
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoCreditCardFragment()).commit();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new NoCreditCardFragment()).commit();
                 }
                 break;
             case R.id.drawerMenuInvoices:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new BillListFragment()).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new BillListFragment()).commit();
                 break;
             case R.id.drawerMenuInstallments:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InstallmentsListFragment()).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new InstallmentsListFragment()).commit();
                 break;
             case R.id.drawerMenuResumes:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new SheetFragment()).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new SheetFragment()).commit();
                 break;
-        }*/
+        }
 
-        //closeDrawer();
+        closeDrawer();
         return false;
     }
 }
