@@ -3,7 +3,6 @@ package com.josuecamelo.com.gestocontas_jcamelo.controllers;
 import com.josuecamelo.com.gestocontas_jcamelo.models.Bank;
 
 import io.realm.Realm;
-import com.josuecamelo.com.gestocontas_jcamelo.models.Bank;
 
 public class BankController {
     public static void create(String owner, double balance,String name, String agency){

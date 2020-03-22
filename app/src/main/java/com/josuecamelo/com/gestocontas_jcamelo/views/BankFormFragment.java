@@ -56,8 +56,6 @@ public class BankFormFragment extends Fragment implements View.OnClickListener {
         //Toast.makeText(getActivity().getApplicationContext(),"Banco criado", Toast.LENGTH_LONG).show();
 
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new BankInfoFragment()).commit();
-
-
     }
 
     void cancel(){
