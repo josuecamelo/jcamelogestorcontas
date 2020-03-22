@@ -1,6 +1,7 @@
 package com.josuecamelo.com.gestocontas_jcamelo.views;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -34,11 +35,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mToolbar = findViewById(R.id.mainToolbar);
         setSupportActionBar(mToolbar);
 
-        /*dl = findViewById(R.id.drawer);
+        dl = findViewById(R.id.drawer);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,dl,mToolbar,R.string.open_drawer,R.string.close_drawer);
-
         dl.addDrawerListener(toggle);
-        toggle.syncState();*/
+        toggle.syncState();
 
         // Carregando fragmento principal
         getSupportFragmentManager().
