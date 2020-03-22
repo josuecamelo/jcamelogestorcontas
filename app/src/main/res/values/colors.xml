@@ -5,4 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorAzul">#2E77E4</color>
     <color name="colorSuccess">#359C39</color>
+
+    <color name="economy_positive">#1ad448</color>
+    <color name="economy_negative">#d6162f</color>
 </resources>

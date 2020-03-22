@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.josuecamelo.com.gestocontas_jcamelo.R;
+import com.josuecamelo.com.gestocontas_jcamelo.controllers.EarningController;
+import com.josuecamelo.com.gestocontas_jcamelo.controllers.ExpenseController;
 
 
 /**
@@ -24,7 +27,33 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
+
+
+        TextView expensesTXT = view.findViewById(R.id.expensesTXT);
+        float totalExpenses = ExpenseController.getMonthTotal();
+        String totalExpensesTXT = String.format("%.2f", totalExpenses);
+        expensesTXT.setText(totalExpensesTXT + " " + getString(R.string.coin));
+
+        TextView earningsTXT = view.findViewById(R.id.earningsTXT);
+        float totalEarnings = EarningController.getMonthTotal();
+        String totalEarningsTXT = String.format("%.2f", totalEarnings);
+        earningsTXT.setText(totalEarningsTXT + " " + getString(R.string.coin));
+
+        TextView economyTXT = view.findViewById(R.id.economyTXT);
+        float economyTotal = totalEarnings - totalExpenses;
+        String economyTotalTXT = String.format("%.2f", economyTotal);
+        economyTXT.setText(economyTotalTXT + " " + getString(R.string.coin));
+
+        if (economyTotal > 0) {
+            // Define a cor positiva
+            economyTXT.setTextColor(getResources().getColor(R.color.economy_positive));
+        } else if (economyTotal < 0) {
+            // Define a cor negativa
+            economyTXT.setTextColor(getResources().getColor(R.color.economy_negative));
+        }
+
+        return view;
     }
 }
