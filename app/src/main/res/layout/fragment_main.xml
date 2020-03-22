@@ -173,19 +173,19 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <!--        <fragment-->
-        <!--            android:id="@+id/fragment"-->
-        <!--            android:name="schoolofnet.com.schoolofmoney.views.CurrentBalanceFragment"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="8dp"-->
-        <!--            android:layout_marginBottom="8dp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/cardView"-->
-        <!--            app:layout_constraintVertical_bias="0.123"-->
-        <!--            tools:layout="@layout/fragment_current_balance" />-->
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.josuecamelo.com.gestocontas_jcamelo.views.CurrentBalanceFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:layout_constraintVertical_bias="0.123"
+            tools:layout="@layout/fragment_current_balance" />
 
         <!--        <fragment-->
         <!--            android:id="@+id/fragment3"-->
