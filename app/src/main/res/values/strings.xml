@@ -9,4 +9,15 @@
     <string name="expense_form_btn2">Salvar</string>
     <string name="expense_form_consolidated">Consolidada</string>
     <string name="expense_form_category">Categoria</string>
+
+    <string-array name="expense_category">
+        <item>Lazer</item>
+        <item>Conta de energia</item>
+        <item>Internet</item>
+        <item>Alimentação</item>
+        <item>Saúde</item>
+    </string-array>
+
+    <string name="actionbar_expenses_form">Adicionar nova despesa</string>
+    <string name="actionbar_earnings_form">Adicionar novo ganho</string>
 </resources>
